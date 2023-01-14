@@ -1,9 +1,10 @@
 import React from "react";
+import Task  from "../components/Task";
 
-function TaskList() {
+function TaskList({tasks, deleteByValue}) {
   return (
     <div className="tasks">
-      {/* display a list of tasks using Task component */}
+      {tasks.map((task , index) => <Task value={task} key={index} text={task.text} category={task.category} deleteByValue={deleteByValue}/>)}
     </div>
   );
 }
